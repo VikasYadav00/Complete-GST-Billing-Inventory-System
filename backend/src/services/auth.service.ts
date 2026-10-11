@@ -132,7 +132,7 @@ export class AuthService {
       }
 
       return { business, user };
-    });
+    }, { maxWait: 20000, timeout: 60000 });
 
     // Record audit log
     await AuditService.log({
