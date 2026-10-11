@@ -4,13 +4,14 @@
   "description": "RetailPro - Retail Inventory, GST Billing, Stock Control & Business Management API",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:push": "prisma db push",
     "prisma:seed": "tsx prisma/seed.ts",
+    "db:setup": "prisma db push && tsx prisma/seed.ts",
     "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [
